@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppLang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppLang.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Lang\AppLang.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppLang.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Lang\AppLang_pt-PT.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppLang_pt-PT.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Lang\AppLang_pt.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppLang_pt.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="AppLang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lang\AppLang.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lang\AppLang_pt-PT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang_pt-PT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Lang\AppLang_pt.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang_pt.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Lang\AppLang.pt">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Lang\AppLang.pt-PT">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

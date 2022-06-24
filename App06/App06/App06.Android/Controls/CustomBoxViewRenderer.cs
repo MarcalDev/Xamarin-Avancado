@@ -8,17 +8,22 @@ using Android.Widget;
 using App06.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
-
+[assembly: ExportRenderer(typeof(CustomBoxView), typeof(App06.Droid.Controls.CustomBoxViewRenderer))]
 namespace App06.Droid.Controls
 {
     [Obsolete]
     public class CustomBoxViewRenderer : BoxRenderer
     {
+        public CustomBoxViewRenderer()
+        {
+            SetWillNotDraw(false);
+        }
         public override void Draw(Canvas canvas)
         {
             base.Draw(canvas);
@@ -26,9 +31,27 @@ namespace App06.Droid.Controls
             CustomBoxView control = (CustomBoxView)Element;
 
             Paint p = new Paint();
-            p.StrokeWidth = (float)control.Espessura
+            p.StrokeWidth = (float)control.Espessura;
+            p.Color = Android.Graphics.Color.Black;
+            p.SetStyle(Paint.Style.Stroke);
 
-            canvas.DrawLine(100,0, 100, 100, p);
+            Android.Graphics.Rect rect = new Android.Graphics.Rect(0, 0, 200, 200);
+            
+            canvas.DrawRect(rect, p);
+
+            canvas.DrawLine(100, 0, 100, 200, p);
+
+            canvas.DrawLine(0, 100, 100, 100, p);
+
+            
+
+
+        }
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+
+            Invalidate();
         }
     }
 }

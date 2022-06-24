@@ -7,6 +7,7 @@ namespace App06.Controls
 {
     public class CustomBoxView : BoxView
     {
+        [Obsolete]
         public static readonly BindableProperty EspessuraProperty = BindableProperty.Create<CustomBoxView, double>(
             p=>p.Espessura, default(double)
             );
