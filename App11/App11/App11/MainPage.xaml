@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App11"
+             xmlns:traducao="clr-namespace:App11.Traducao"
              x:Class="App11.MainPage">
 
-    <Label x:Name="LblMsg"/>
+    <StackLayout>
+        <Label x:Name="LblMsg" VerticalOptions="Center" 
+               HorizontalOptions="Center"/>
+        
+        <Label Text="{traducao:Translate Text=MSG_01}"/>
+    </StackLayout>
 
 </ContentPage>

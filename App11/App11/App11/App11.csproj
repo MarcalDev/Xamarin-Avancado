@@ -21,20 +21,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppLang.resx</DependentUpon>
     </Compile>
-    <Compile Update="Lang\AppLang.Designer.cs">
+    <Compile Update="Lang\AppLang.pt-PT.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>AppLang.resx</DependentUpon>
+      <DependentUpon>AppLang.pt-PT.resx</DependentUpon>
     </Compile>
-    <Compile Update="Lang\AppLang_pt-PT.Designer.cs">
+    <Compile Update="Lang\AppLang.pt.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>AppLang_pt-PT.resx</DependentUpon>
-    </Compile>
-    <Compile Update="Lang\AppLang_pt.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AppLang_pt.resx</DependentUpon>
+      <DependentUpon>AppLang.pt.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -47,24 +42,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Lang\AppLang_pt-PT.resx">
+    <EmbeddedResource Update="Lang\AppLang.pt-PT.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppLang_pt-PT.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppLang.pt-PT.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Lang\AppLang_pt.resx">
+    <EmbeddedResource Update="Lang\AppLang.pt.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppLang_pt.Designer.cs</LastGenOutput>
+      <LastGenOutput>AppLang.pt.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Lang\AppLang.pt">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
-    </None>
-    <None Update="Lang\AppLang.pt-PT">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>AppLang.Designer.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 </Project>

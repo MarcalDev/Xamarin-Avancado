@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App012.MainPage">
+
+    <StackLayout>
+        <Label x:Name="LblMsg"/>
+        <Entry x:Name="TxtNome" Placeholder="Digite o seu nome"/>
+        <Entry x:Name="TxtEmail" Placeholder="Digite o seu email"/>
+        <Entry x:Name="TxtCPF" Placeholder="Digite o seu CPF"/>
+        <Button x:Name="BtnSalvar" Text="ENVIAR"/>
+    </StackLayout>
+
+</ContentPage>
