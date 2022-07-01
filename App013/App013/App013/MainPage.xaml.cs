@@ -20,25 +20,30 @@ namespace App013
 
         private async void TirarFoto(object origem, EventArgs args)
         {
+            // Inicializa o plugin
             await CrossMedia.Current.Initialize();
 
+            // Caso o plugin esteja disponível
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                DisplayAlert("No Camera", ":( No camera available.", "OK");
+                await DisplayAlert("Sem camera", ":( camera não autorizada.", "OK");
                 return;
             }
 
+            // atribui a file uma instancia, passando o diretório e nome da imagem, através de um método
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "Sample",
                 Name = "test.jpg"
             });
 
+
             if (file == null)
                 return;
 
-            await DisplayAlert("File Location", file.Path, "OK");
+            await DisplayAlert("Local do arquivo: ", file.Path, "OK");
 
+            // Define a imagem do componente (Stream - classe para passagem de arquivos)
             Imagem.Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();

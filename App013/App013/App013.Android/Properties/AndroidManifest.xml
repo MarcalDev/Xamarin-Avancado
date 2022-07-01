@@ -1,12 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.companyname.app013" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="24" android:targetSdkVersion="31" />
-	<application android:label="App013.Android" android:theme="@style/MainTheme"></application>
-	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-	<application android:label="SampleApp"
-				 android:debuggable="true"
-				 android:theme="@android:style/Theme.Light">
+	<application android:label="App013.Android" android:theme="@style/MainTheme" android:debuggable="true">
 		<provider android:name="android.support.v4.content.FileProvider"
 						android:authorities="App013.Droid.fileprovider"
 						android:exported="false"
@@ -16,4 +11,8 @@
 		</provider>
 		
 	</application>
+	
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	
 </manifest>

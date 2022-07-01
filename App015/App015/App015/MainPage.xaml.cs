@@ -19,7 +19,7 @@ namespace App015
 
             BtnAdicionar.Clicked += delegate
             {
-                
+
 
                 Produto produto = new Produto();
                 produto.Item = Item.Text;
@@ -31,12 +31,12 @@ namespace App015
                 bool valido = Validator.TryValidateObject(produto, contexto, listRes, true);
 
 
-                if(valido == false)
+                if (valido == false)
                 {
                     string mensagem = string.Empty;
 
                     // Saída de erros
-                    foreach(var res in listRes)
+                    foreach (var res in listRes)
                     {
                         mensagem += res.ErrorMessage = "\n";
                     }
@@ -47,27 +47,27 @@ namespace App015
                     //Salvar
                     var realm = Realms.Realm.GetInstance();
 
-                    if(Id.Text == null)
+                    if (Id.Text == null)
                     {
                         #region Produto - Adicionar
-                    
 
-                    // puxa o último produto a ser inserido
-                    var produtoFinal = realm.All<Produto>().OrderByDescending(a => a.Id).First();
-                    int newId = 1;
 
-                    if (produtoFinal != null)
-                    {
-                        // Define o novo id
-                        newId = produtoFinal.Id + 1;
-                    }
-                    produto.Id = newId;
+                        // puxa o último produto a ser inserido
+                        var produtoFinal = realm.All<Produto>().OrderByDescending(a => a.Id).First();
+                        int newId = 1;
 
-                    realm.Write(() =>
-                    {
+                        if (produtoFinal != null)
+                        {
+                            // Define o novo id
+                            newId = produtoFinal.Id + 1;
+                        }
+                        produto.Id = newId;
+
+                        realm.Write(() =>
+                        {
                         // Inserção do produto utilizando os parametros do objeto
                         realm.Add(produto);
-                    });
+                        });
                         #endregion
 
                     }
@@ -92,7 +92,7 @@ namespace App015
                     Lista.ItemsSource = realm.All<Produto>();
 
                     // Retorna alerta
-                    DisplayAlert("Salvo com sucesso", "Itens no banco de dados" + 
+                    DisplayAlert("Salvo com sucesso", "Itens no banco de dados" +
                         realm.All<Produto>().Count(), "OK");
 
                 }

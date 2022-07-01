@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App017.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelFontStyle">
+                <Setter Property="Label.FontFamily">
+                    <OnPlatform x:TypeArguments="x:String">
+                        <!--<OnPlatform.iOS></OnPlatform.iOS>
+                        <OnPlatform.android>Montserrat-Bold</OnPlatform.android>-->                        
+                    </OnPlatform>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+       
+    </Application.Resources>
+</Application>
